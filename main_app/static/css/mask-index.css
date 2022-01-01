@@ -1,3 +1,16 @@
 .card {
   background-color: darkgray;
+  width: 275px;
+  margin: 10px;
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: gray;
 }
+
+.card-container {
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
