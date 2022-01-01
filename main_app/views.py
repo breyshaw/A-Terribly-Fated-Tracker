@@ -3,3 +3,7 @@ from django.http import HttpResponse
 
 def home(request):
   return HttpResponse('Home view works!')
+
+# For testing with the templates, may keep this page...
+def about(request):
+  return render(request, 'about.html')
