@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mask-index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<section>
+  <h1>All Masks</h1>
+</section>
+
+<section>
+  {% for mask in masks %}
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="Image of Mask">
+    <h2 class="card-title">{{ mask.name }}</h2>
+    {% comment %} <div class="card-body">
+      <p class="card-text">{{ mask.details }}</p>
+    </div> {% endcomment %}
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
