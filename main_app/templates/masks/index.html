@@ -14,11 +14,10 @@
 <section class='card-container'>
   {% for mask in masks %}
   <div class="card shadow p-3 mb-5" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="Image of Mask">
-    <h2 class="card-title">{{ mask.name }}</h2>
-    {% comment %} <div class="card-body">
-      <p class="card-text">{{ mask.details }}</p>
-    </div> {% endcomment %}
+    <a href="{% url 'masks_detail' mask.id %}">
+      <img src="..." class="card-img-top" alt="Image of Mask">
+      <h2 class="card-title">{{ mask.name }}</h2>
+    </a>
   </div>
   {% endfor %}
 </section>

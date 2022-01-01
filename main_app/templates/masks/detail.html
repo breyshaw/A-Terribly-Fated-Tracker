@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/mask-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class='mask-container'>
+  <div>
+    <img class='mask-img' src="{% static '' %}" alt="Image of the Mask">
+  </div>
+  <div class="mask-details">
+    <h1>{{ mask.name }}</h1>
+    <h2>{{ mask.details }}</h2>
+    <p>{{ mask.guide }}</p>
+  </div>
+</section>
+
+{% endblock %}

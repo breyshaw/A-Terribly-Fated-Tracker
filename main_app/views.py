@@ -11,3 +11,7 @@ def about(request):
 def masks_index(request):
   masks = Mask.objects.all()
   return render(request, 'masks/index.html', { 'masks': masks })
+
+def masks_detail(request, mask_id):
+  mask = Mask.objects.get(id=mask_id)
+  return render(request, 'masks/detail.html', { 'mask': mask })
