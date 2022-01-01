@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'a_terribly_fated_tracker.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql',
-		'NAME': 'a-terribly-fated-tracker',
+		'NAME': 'terrible-tracker',
 	}
 }
 
