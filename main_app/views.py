@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Mask, File
 
 def home(request):
@@ -23,3 +24,17 @@ def files_index(request):
 def files_detail(request, file_id):
   file = File.objects.get(id=file_id)
   return render(request, 'files/detail.html', { 'file': file })
+
+# By convention, the FileCreate CBV will look to render a template named templates/main_app/file_form.html
+class FileCreate(CreateView):
+  model = File
+  fields = '__all__'
+  success_url = '/files/'
+
+class FileUpdate(UpdateView):
+  model = File
+  fields = '__all__'
+
+class FileDelete(DeleteView):
+  model = File
+  success_url = '/files/'

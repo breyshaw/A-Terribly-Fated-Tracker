@@ -18,14 +18,19 @@
       <a href="{% url 'files_detail' file.id %}">
       <h2 class="card-title">{{ file.name }}</h2>
       <p>{{ file.date }}</p>
+      <div class="file-actions">
+        <a href="{% url 'files_update' file.id %}"><button>Edit</button></a>
+        <a href="{% url 'files_delete' file.id %}"><button>Delete</button></a>
+      </div>
       <h3>Mask Inventory</h3>
     <div class="subsection-content">
       {% if file.mask_inventory.count %}
         {% for mask in file.mask_inventory.all %}
           <div>
               <p>{{ mask.name }}</p>
+            </div>
           </div>
-        {% endfor %}
+          {% endfor %}
       {% else %}
         <p>No Masks. Time to begin your adventure.</p>
       {% endif %}
@@ -34,6 +39,7 @@
   </div>
   {% endfor %}
 </a>
+<h1><a href="{% url 'files_create' %}">Create a new save file</a></h1>
 </section>
 
 {% endblock %}
