@@ -19,3 +19,7 @@ def masks_detail(request, mask_id):
 def files_index(request):
   files = File.objects.all()
   return render(request, 'files/index.html', { 'files': files })
+
+def files_detail(request, file_id):
+  file = File.objects.get(id=file_id)
+  return render(request, 'files/detail.html', { 'file': file })
