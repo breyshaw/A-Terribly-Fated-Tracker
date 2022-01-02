@@ -25,7 +25,12 @@
         alt="No image for this mask"
       >
     {% endif %}
-    <h3>Change the {{ mask.name }} masks photo</h3>
+
+{% comment %} 
+Need to change my user model to have an isAdmin attribute 
+{% endcomment %}
+    {% comment %} {% if user.isAdmin %} {% endcomment %}
+    <h3>Change the {{ mask.name }} photo</h3>
     <p id="file-name"></p>
     <form 
       action="{% url 'add_photo' mask.id %}"
@@ -45,6 +50,13 @@
     <h2>{{ mask.details }}</h2>
     <p>{{ mask.guide }}</p>
   </div>
+  {% comment %} {% else %}
+  <div class="mask-details">
+    <h1>{{ mask.name }}</h1>
+    <h2>{{ mask.details }}</h2>
+    <p>{{ mask.guide }}</p>
+  </div>
+  {% endif %} {% endcomment %}
 </section>
 
 {% endblock %}
