@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Mask
+from .models import Mask, File
 
 def home(request):
   return render(request, 'home.html')
@@ -15,3 +15,7 @@ def masks_index(request):
 def masks_detail(request, mask_id):
   mask = Mask.objects.get(id=mask_id)
   return render(request, 'masks/detail.html', { 'mask': mask })
+
+def files_index(request):
+  files = File.objects.all()
+  return render(request, 'files/index.html', { 'files': files })

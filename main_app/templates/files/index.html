@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/file-index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<section>
+  <h1>Save Files</h1>
+</section>
+
+<section class='card-container'>
+  {% for file in files %}
+  <div class="card shadow p-3 mb-5" style="width: 18rem;">
+    {% comment %} <a href="{% url 'files_detail' file.id %}"> {% endcomment %}
+      <h2 class="card-title">{{ file.name }}</h2>
+      <p>{{ file.date }}</p>
+      <h3>Mask Inventory</h3>
+    <div class="subsection-content">
+      {% if file.mask_inventory.count %}
+        {% for mask in file.mask_inventory.all %}
+          <div>
+              <p>{{ mask.name }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No Masks. Time to begin your adventure.</p>
+      {% endif %}
+    </div>
+    {% comment %} </a> {% endcomment %}
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
