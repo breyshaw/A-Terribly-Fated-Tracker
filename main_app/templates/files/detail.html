@@ -18,24 +18,30 @@
               <p>{{ mask.name }}</p>
           </div>
   </div>
+  <form action="{% url 'remove_mask' file.id mask.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn submit">Remove Mask from inventory</button>
+  </form>
+  
   {% endfor %}
 
 <h1>Masks Left</h1>
 <div class="subsection-content">
   {% if masks.count %}
     {% for mask in masks %}
-    <div class="toy-container">
+    <div class="mask-container">
       <a href="{% url 'masks_detail' mask.id %}">
         <p>{{ mask.name }}</p>
       </a>
-      {% comment %} <form action="{% url 'assoc_mask' file.id mask.id %}" method="post">
+      <form action="{% url 'assoc_mask' file.id mask.id %}" method="post">
         {% csrf_token %}
         <button type="submit" class="btn submit">Add mask to file inventory</button>
-      </form> {% endcomment %}
+      </form>
     </div>
     {% endfor %}
+    
   {% else %}
-    <p class="all-toys">
+    <p class="all-masks">
       {{file.name}} already has all the masks 🥳
     </p>
   {% endif %}

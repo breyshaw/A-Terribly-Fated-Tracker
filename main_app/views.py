@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Mask, File
 
@@ -25,6 +25,14 @@ def files_detail(request, file_id):
   file = File.objects.get(id=file_id)
   masks_file_doesnt_have = Mask.objects.exclude(id__in = file.mask_inventory.all().values_list('id'))
   return render(request, 'files/detail.html', { 'file': file, 'masks' : masks_file_doesnt_have })
+
+def assoc_mask(request, file_id, mask_id):
+  File.objects.get(id=file_id).mask_inventory.add(mask_id)
+  return redirect('files_detail', file_id=file_id)
+
+def remove_mask(request, file_id, mask_id):
+  File.objects.get(id=file_id).mask_inventory.remove(mask_id)
+  return redirect('files_detail', file_id=file_id)
 
 # By convention, the FileCreate CBV will look to render a template named templates/main_app/file_form.html
 class FileCreate(CreateView):
