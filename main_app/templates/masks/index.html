@@ -15,7 +15,20 @@
   {% for mask in masks %}
   <div class="card shadow p-3 mb-5" style="width: 18rem;">
     <a href="{% url 'masks_detail' mask.id %}">
-      <img src="..." class="card-img-top" alt="Image of Mask">
+      <div class="card-img-container">
+        {% if mask.photo.url %}
+          <img 
+            src="{{mask.photo.url}}" 
+            alt="A photo of {{mask.name}}"
+            class="usr-img"
+          >
+        {% else %}
+          <img 
+            src="{% static '' %}" 
+            alt="No photo uploaded"
+          >
+        {% endif %}
+      </div>
       <h2 class="card-title">{{ mask.name }}</h2>
     </a>
   </div>

@@ -33,6 +33,21 @@
   margin: 5px 0;
 }
 
+.usr-img {
+  width: 100%;
+}
+
+#file-input {
+  overflow: hidden;
+  position: absolute;
+  width: .1px;
+  height: .1px;
+}
+
+#file-name {
+  margin-bottom: 10px;
+}
+
 @media only screen and (min-width: 768px) {
   .mask-container {
     padding: 35px 30px;

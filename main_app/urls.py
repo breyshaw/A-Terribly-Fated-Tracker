@@ -6,6 +6,7 @@ urlpatterns = [
   path('about/', views.about, name='about'),
   path('masks/', views.masks_index, name='masks_index'),
   path('masks/<int:mask_id>/', views.masks_detail, name='masks_detail'),
+  path('masks/<int:mask_id>/add_photo/', views.add_photo, name='add_photo'),
   path('files/', views.files_index, name='files_index'),
   path('files/<int:file_id>/', views.files_detail, name='files_detail'),
   path('files/create/', views.FileCreate.as_view(), name='files_create'),

@@ -12,8 +12,33 @@
 {% block content %}
 
 <section class='mask-container'>
-  <div>
-    <img class='mask-img' src="{% static '' %}" alt="Image of the Mask">
+  <div class="mask-img">
+    {% if mask.photo.url %}
+      <img 
+        src="{{mask.photo.url}}" 
+        alt="A photo of {{mask.name}}"
+        class="usr-img"
+      >
+    {% else %}
+      <img 
+        src="{% static '' %}" 
+        alt="No image for this mask"
+      >
+    {% endif %}
+    <h3>Change the {{ mask.name }} masks photo</h3>
+    <p id="file-name"></p>
+    <form 
+      action="{% url 'add_photo' mask.id %}"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <label class="btn secondary">
+        Choose photo
+        <input type="file" name="photo-file" id="file-input">
+      </label>
+      <button type="submit" class="btn submit">Upload Photo</button>
+    </form>
   </div>
   <div class="mask-details">
     <h1>{{ mask.name }}</h1>

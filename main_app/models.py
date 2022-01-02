@@ -18,3 +18,11 @@ class File(models.Model):
 
   def __str__(self):
     return self.name
+
+class Photo(models.Model):
+  url = models.CharField(max_length=250)
+  mask = models.OneToOneField(Mask, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Photo for mask_id: {self.mask_id} @{self.url}"
+
