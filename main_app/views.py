@@ -23,7 +23,8 @@ def files_index(request):
 
 def files_detail(request, file_id):
   file = File.objects.get(id=file_id)
-  return render(request, 'files/detail.html', { 'file': file })
+  masks_file_doesnt_have = Mask.objects.exclude(id__in = file.mask_inventory.all().values_list('id'))
+  return render(request, 'files/detail.html', { 'file': file, 'masks' : masks_file_doesnt_have })
 
 # By convention, the FileCreate CBV will look to render a template named templates/main_app/file_form.html
 class FileCreate(CreateView):

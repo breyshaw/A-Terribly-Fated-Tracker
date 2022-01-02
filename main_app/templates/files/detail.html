@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<h1>Mask Inventory</h1>
+<h1>{{file.name}}'s Mask Inventory</h1>
 <section class='card-container'>
   {% for mask in file.mask_inventory.all %}
           <div>
@@ -20,6 +20,27 @@
   </div>
   {% endfor %}
 
+<h1>Masks Left</h1>
+<div class="subsection-content">
+  {% if masks.count %}
+    {% for mask in masks %}
+    <div class="toy-container">
+      <a href="{% url 'masks_detail' mask.id %}">
+        <p>{{ mask.name }}</p>
+      </a>
+      {% comment %} <form action="{% url 'assoc_mask' file.id mask.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn submit">Add mask to file inventory</button>
+      </form> {% endcomment %}
+    </div>
+    {% endfor %}
+  {% else %}
+    <p class="all-toys">
+      {{file.name}} already has all the masks 🥳
+    </p>
+  {% endif %}
+  </div>
 </section>
+
 
 {% endblock %}
