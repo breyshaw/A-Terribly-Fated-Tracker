@@ -8,8 +8,8 @@ section {
 }
 
 .title-container {
-  width: 60%;
-  margin-top: -10%;
+  width: 55%;
+  margin-top: -5%;
 }
 
 body {
@@ -24,4 +24,8 @@ input {
 
 .btn {
   color: black;
+}
+
+h1 {
+  color: red;
 }
