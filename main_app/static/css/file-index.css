@@ -1,2 +1,17 @@
-/* Will come back to this when styling */
-/* Would like to make it look like the file select screen of the original game or 3ds remake */
+.card {
+  background-color: cornflowerblue;
+  width: 80%;
+  border-color: red;
+  border-radius: 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mask-icon {
+  width: 25%;
+}
+

@@ -6,40 +6,37 @@
 {% endblock %}
 
 {% block content %}
-
-<section>
   <h1>Save Files</h1>
-</section>
-
-<section class='card-container'>
-  {% for file in files %}
-  <div class="card shadow p-3 mb-5" style="width: 18rem;">
-    {% comment %} <a href="{% url 'files_detail' file.id %}"> {% endcomment %}
-      <a href="{% url 'files_detail' file.id %}">
-      <h2 class="card-title">{{ file.name }}</h2>
-      <p>{{ file.date }}</p>
-      <div class="file-actions">
-        <a href="{% url 'files_update' file.id %}"><button>Edit</button></a>
-        <a href="{% url 'files_delete' file.id %}"><button>Delete</button></a>
-      </div>
-      <h3>Mask Inventory</h3>
-    <div class="subsection-content">
-      {% if file.mask_inventory.count %}
-        {% for mask in file.mask_inventory.all %}
-          <div>
-              <p>{{ mask.name }}</p>
+  <h1>
+    <a href="{% url 'files_create' %}">Create a new save file</a>
+  </h1>
+  <section class='card-container'>
+    {% for file in files %}
+    <div class="card shadow p-3 mb-5">
+        <h2 class="card-title">
+          {{ file.name }}
+        </h2>
+        <p>Started on: {{ file.date }}</p>
+    </a>
+        <div class="file-actions">
+          <a href="{% url 'files_detail' file.id %}"><button class="btn btn-success">Open File</button>
+          <a href="{% url 'files_update' file.id %}"><button class="btn btn-warning">Edit</button></a>
+          <a href="{% url 'files_delete' file.id %}"><button class="btn btn-danger">Delete</button></a>
+        </div>
+        <h3>Masks Obtained</h3>
+      <div class="subsection-content">
+        {% if file.mask_inventory.count %}
+          {% for mask in file.mask_inventory.all %}
+            <div>
+                <img class="mask-icon" src="{{ mask.photo.url }}"></img>
             </div>
-          </div>
-          {% endfor %}
-      {% else %}
-        <p>No Masks. Time to begin your adventure.</p>
-      {% endif %}
+      </div>
+            {% endfor %}
+        {% else %}
+          <p>No Masks. Time to begin your adventure.</p>
+        {% endif %}
     </div>
-    {% comment %} </a> {% endcomment %}
-  </div>
-  {% endfor %}
-</a>
-<h1><a href="{% url 'files_create' %}">Create a new save file</a></h1>
-</section>
+    {% endfor %}
+  </section>
 
 {% endblock %}
