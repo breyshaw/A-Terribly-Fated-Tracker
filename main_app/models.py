@@ -26,3 +26,6 @@ class Photo(models.Model):
   def __str__(self):
     return f"Photo for mask_id: {self.mask_id} @{self.url}"
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    isAdmin = models.BooleanField(default=False)

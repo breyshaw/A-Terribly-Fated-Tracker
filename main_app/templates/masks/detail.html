@@ -26,10 +26,7 @@
       >
     {% endif %}
 
-{% comment %} 
-Need to change my user model to have an isAdmin attribute 
-{% endcomment %}
-    {% comment %} {% if user.isAdmin %} {% endcomment %}
+    {% if user.profile.isAdmin %}
     <h3>Change the {{ mask.name }} photo</h3>
     <p id="file-name"></p>
     <form 
@@ -50,13 +47,13 @@ Need to change my user model to have an isAdmin attribute
     <h2>{{ mask.details }}</h2>
     <p>{{ mask.guide }}</p>
   </div>
-  {% comment %} {% else %}
+  {% else %}
   <div class="mask-details">
     <h1>{{ mask.name }}</h1>
     <h2>{{ mask.details }}</h2>
     <p>{{ mask.guide }}</p>
   </div>
-  {% endif %} {% endcomment %}
+  {% endif %}
 </section>
 
 {% endblock %}
