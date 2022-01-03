@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+{% endblock %}
 
 {% block content %}
-
-<h1>About the Mask Tracker</h1>
-<hr />
-<p>
-  A Terribly Fated Tracker is a Majoras Mask inspired tracker and guide to assist with obtaining all masks in the game!
-</p>
+<section>
+  <h2>About the Mask Tracker</h2>
+  <hr />
+  <p>
+    A Terribly Fated Tracker is a Majoras Mask inspired tracker and guide to assist with obtaining all masks in the game! The Masks, the Majoras Mask title, and a few other textures were used with permission by the wonderful artist, Henriko Magnifico! Check out Henriko's work here!
+    <a href="https://www.henrikomagnifico.com/">Henriko Magnifico's Website</a>
+  </p>
+</section>
 
 {% endblock %}
