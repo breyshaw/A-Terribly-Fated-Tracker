@@ -7,19 +7,20 @@
 
 {% block content %}
 
-<section>
-<h2>Majoras Mask title screen</h2>
-</section>
-
 {% if not user.is_authenticated %}
   <section>
-    <form action="{% url 'home' %}" method="post" class="login">
-      <h1>Login</h1>
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="hidden" name="next" value="{{ next }}">
-      <button type="submit" class="btn submit">Login</button>
-    </form>
+    <div class="card text-white bg-dark border-danger mb-3" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="Majoras Mask Image">
+      <form action="{% url 'home' %}" method="post" class="card-body text-danger">
+        <h1 class='card-title'>Login</h1>
+        <div class='card-text'>
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="hidden" name="next" value="{{ next }}">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        </div>
+    </div>
   </section>
 {% endif %}
 
