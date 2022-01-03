@@ -1,3 +1,9 @@
+body {
+  background-image: url('../images/tiles.png');
+  background-position: center;
+  color: whitesmoke;
+}
+
 .mask-container {
   padding: 35px 30px;
   display: flex;
@@ -62,3 +68,4 @@
     margin-right: 25px;
   }
 }
+

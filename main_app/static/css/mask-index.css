@@ -1,10 +1,11 @@
 .card {
-  background-color: darkgray;
+  background-color: grey;
   width: 275px;
   margin: 10px;
   border-color: black;
   border-radius: 10px;
-  box-shadow: gray;
+  border-width: 5px;
+  box-shadow: black;
 }
 
 .card-container {
@@ -12,5 +13,11 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  opacity: 93%;
 }
 
+body {
+  background-image: url('../images/hdbrick.png');
+  background-position: center;
+  color: whitesmoke;
+}

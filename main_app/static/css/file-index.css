@@ -1,17 +1,26 @@
 .card {
-  background-color: cornflowerblue;
+  background-color: black;
+  color: whitesmoke;
   width: 80%;
-  border-color: red;
+  border-color: whitesmoke;
   border-radius: 10px;
+  border-width: 5px;
 }
 
 .card-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  opacity: 85%;
 }
 
 .mask-icon {
-  width: 25%;
+  width: 10%;
+}
+
+body {
+  background-image: url('../images/smoothwood.png');
+  background-position: center;
+  color: whitesmoke;
 }
 
