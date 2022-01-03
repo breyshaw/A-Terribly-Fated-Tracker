@@ -7,17 +7,20 @@
 
 {% block content %}
 
+
+<section>
+<div class="title-container">
+  <img src="{% static 'images/title.png' %}" class="card-img-top" alt="Majoras Mask Image">
+</div>
 {% if not user.is_authenticated %}
-  <section>
-    <div class="card text-white bg-dark border-danger mb-3" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="Majoras Mask Image">
+    <div class="card text-white bg-dark border-danger mb-3" style="width: 20rem;">
       <form action="{% url 'home' %}" method="post" class="card-body text-danger">
-        <h1 class='card-title'>Login</h1>
+        <h3 class='card-title'>Login to start tracking:</h3>
         <div class='card-text'>
           {% csrf_token %}
           {{ form.as_p }}
           <input type="hidden" name="next" value="{{ next }}">
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-danger">Login</button>
         </form>
         </div>
     </div>

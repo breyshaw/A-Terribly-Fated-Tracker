@@ -7,3 +7,21 @@ section {
   flex-direction: column;
 }
 
+.title-container {
+  width: 60%;
+  margin-top: -10%;
+}
+
+body {
+  background-color: black;
+}
+
+input {
+  background-color: black;
+  border-color: red;
+  color: white
+}
+
+.btn {
+  color: black;
+}
