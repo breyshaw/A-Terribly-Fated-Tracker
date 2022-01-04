@@ -21,6 +21,7 @@ section {
 body {
   background-color: black;
   font-family: HyliaSerifBeta-Regular;
+  color: red;
 }
 
 input {
@@ -35,12 +36,4 @@ input {
 
 h1 {
   color: red;
-}
-
-h2 {
-  color: whitesmoke;
-}
-
-p {
-  color: whitesmoke;
 }
