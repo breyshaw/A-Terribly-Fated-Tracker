@@ -22,34 +22,37 @@
             <button type="submit" class="btn submit">Remove Mask from inventory</button>
         </form>
       </div>
+</section>
     {% endfor %}
-  </section>
   {% else %}
 <h1>You have no masks in inventory. Add them below as you progress through the game!</h1>
 {% endif %}
 
-  {% if masks.count %}
-  <h1>Masks Left</h1>
-  {% for mask in masks %}
-  <section class='card-container'>
+{% if masks.count %}
+<h1>Masks Left</h1>
+{% for mask in masks %}
+<section class='card-container'>
     <div class="card shadow p-3 mb-5" style="width: 12rem;">
         <a style='text-decoration: none;' href="{% url 'masks_detail' mask.id %}">
         <img class="card-img-top" src="{{ mask.photo.url }}" alt="">
-        <h2 class="card-title">{{ mask.name }}</h2>
+        <h2>{{ mask.name }}</h2>
         </a>
         <form action="{% url 'assoc_mask' file.id mask.id %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn submit">Add mask to file inventory</button>
         </form>
+      </div>
+      {% endfor %}
     </section>
-    </div>
-    {% endfor %}
     {% else %}
-    <div class="card shadow p-3 mb-5" style="width: 18rem;">
-    <h1>
-        Congrats on obtaining all masks!! 🥳
-    </h1>
-  </div>
+    <section class="card-container">
+
+      <div class="card shadow p-3 mb-5" style="width: 18rem;">
+      <h1>
+          Congrats on obtaining all masks!! 🥳
+      </h1>
+    </div>
+
+    </section>
     {% endif %}
-</section>
 {% endblock %}
