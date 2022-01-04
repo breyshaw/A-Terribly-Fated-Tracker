@@ -1,31 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
 {% endblock %}
-
 {% block content %}
-
-
 <section>
-<div class="title-container">
-  <img src="{% static 'images/title.png' %}" class="card-img-top" alt="Majoras Mask Image">
-</div>
-<h1 class='display-4'>A Terribly Fated Tracker</h1>
-{% if not user.is_authenticated %}
+    <div class="title-container">
+        <img src="{% static 'images/title.png' %}" class="card-img-top" alt="Majoras Mask Image">
+    </div>
+    <h1 class='display-4'>A Terribly Fated Tracker</h1>
+    {% if not user.is_authenticated %}
     <div class="card text-white bg-dark border-danger mb-3" style="width: 20rem;">
-      <form action="{% url 'home' %}" method="post" class="card-body text-danger">
-        <h3 class='card-title'>Login to track:</h3>
-        <div class='card-text'>
-          {% csrf_token %}
-          {{ form.as_p }}
-          <input type="hidden" name="next" value="{{ next }}">
-          <button type="submit" class="btn btn-danger">Login</button>
+        <form action="{% url 'home' %}" method="post" class="card-body text-danger">
+            <h3 class='card-title'>Login to track:</h3>
+            <div class='card-text'>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="hidden" name="next" value="{{ next }}">
+                <button type="submit" class="btn btn-danger">Login</button>
         </form>
         </div>
     </div>
-  </section>
+</section>
 {% endif %}
-
 {% endblock %}

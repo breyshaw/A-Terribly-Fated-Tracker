@@ -1,52 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block head %}
 <link 
-  rel="stylesheet" 
-  type="text/css" 
-  href="{% static 'css/file-detail.css' %}"
-/>
+    rel="stylesheet" 
+    type="text/css" 
+    href="{% static 'css/file-detail.css' %}"
+    />
 {% endblock %}
-
 {% block content %}
-
 <h1>{{file.name}}'s Mask Inventory</h1>
+{% for mask in file.mask_inventory.all %}
 <section class='card-container'>
-  {% for mask in file.mask_inventory.all %}
-          <div>
-              <p>{{ mask.name }}</p>
-          </div>
-  </div>
-  <form action="{% url 'remove_mask' file.id mask.id %}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn submit">Remove Mask from inventory</button>
-  </form>
-  
-  {% endfor %}
-
-<h1>Masks Left</h1>
-<div class="subsection-content">
-  {% if masks.count %}
-    {% for mask in masks %}
-    <div class="mask-container">
+    <div class="card shadow p-3 mb-5" style="width: 18rem;">
       <a href="{% url 'masks_detail' mask.id %}">
-        <p>{{ mask.name }}</p>
-      </a>
-      <form action="{% url 'assoc_mask' file.id mask.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn submit">Add mask to file inventory</button>
-      </form>
+        <img src="{{ mask.photo.url }}" alt="">
+        </a>
+        <form action="{% url 'remove_mask' file.id mask.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn submit">Remove Mask from inventory</button>
+        </form>
+      </div>
+    {% endfor %}
+  </section>
+  
+  {% if masks.count %}
+  <h1>Masks Left</h1>
+  {% for mask in masks %}
+  <section class='card-container'>
+    <div class="card shadow p-3 mb-5" style="width: 18rem;">
+        <a href="{% url 'masks_detail' mask.id %}">
+        <img src="{{ mask.photo.url }}" alt="">
+        </a>
+        <form action="{% url 'assoc_mask' file.id mask.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn submit">Add mask to file inventory</button>
+        </form>
+    </section>
     </div>
     {% endfor %}
-    
-  {% else %}
-    <p class="all-masks">
-      {{file.name}} already has all the masks 🥳
-    </p>
-  {% endif %}
+    {% else %}
+    <div class="card shadow p-3 mb-5" style="width: 18rem;">
+    <h1>
+        Congrats on obtaining all masks!! 🥳
+    </h1>
   </div>
+    {% endif %}
 </section>
-
-
 {% endblock %}

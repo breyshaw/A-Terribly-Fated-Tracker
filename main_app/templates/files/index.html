@@ -1,46 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/file-index.css' %}"/>
 {% endblock %}
-
 {% block content %}
 <h1>Save Files</h1>
-  <section class='card-container'>
+<section class='card-container'>
     {% for file in files %}
     <div class="card shadow p-3 mb-5">
         <h2 class="card-title">
-          {{ file.name }}
+            {{ file.name }}
         </h2>
         <p>Started on: {{ file.date }}</p>
-    </a>
+        </a>
         <div class="file-actions">
-          <a href="{% url 'files_detail' file.id %}"><button class="btn btn-success">Open File</button>
-          <a href="{% url 'files_update' file.id %}"><button class="btn btn-warning">Edit</button></a>
-          <a href="{% url 'files_delete' file.id %}"><button class="btn btn-danger">Delete</button></a>
+            <a href="{% url 'files_detail' file.id %}"><button class="btn btn-success">Open File</button>
+            <a href="{% url 'files_update' file.id %}"><button class="btn btn-warning">Edit</button></a>
+            <a href="{% url 'files_delete' file.id %}"><button class="btn btn-danger">Delete</button></a>
         </div>
         <h3>Masks Obtained</h3>
-      <div class="subsection-content">
-        {% if file.mask_inventory.count %}
-          {% for mask in file.mask_inventory.all %}
-            <div>
-                <img class="mask-icon" src="{{ mask.photo.url }}"></img>
-            </div>
-      </div>
+        <div class="subsection-content">
+            {% if file.mask_inventory.count %}
+            {% for mask in file.mask_inventory.all %}
+            <img class="mask-icon" src="{{ mask.photo.url }}"></img>
             {% endfor %}
+        </div>
         {% else %}
-          <p>No Masks. Time to begin your adventure.</p>
-        {% endif %}
+    </div>
+    <p>No Masks! Time to begin your adventure.</p>
+    {% endif %}
     </div>
     {% endfor %}
-  </section>
-  <section>
+</section>
+<section>
     <a style='text-decoration: none; color: whitesmoke;' href="{% url 'files_create' %}">
     <button class='btn btn-dark'>
-      Create a new save file
+    Create a new save file
     </button>
-  </a>
-  </section>
-
+    </a>
+</section>
 {% endblock %}

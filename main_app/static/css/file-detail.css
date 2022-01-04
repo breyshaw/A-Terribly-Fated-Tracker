@@ -1,1 +1,37 @@
-/* Will come back to this when styling */
+@font-face {
+  font-family: HyliaSerifBeta-Regular;
+  src: url('../font/HyliaSerifBeta-Regular.otf')
+  format('opentype')
+}
+
+body {
+  font-family: HyliaSerifBeta-Regular;
+  background-image: url('../images/tiles.png');
+  background-position: center;
+  color: whitesmoke;
+}
+
+
+.card {
+  background-color: grey;
+  width: 275px;
+  margin: 10px;
+  border-color: black;
+  border-radius: 10px;
+  border-width: 5px;
+  box-shadow: black;
+}
+
+.card-container {
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 93%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
