@@ -9,6 +9,7 @@ body {
   background-image: url('../images/tiles.png');
   background-position: center;
   color: whitesmoke;
+  text-decoration: none;
 }
 
 
@@ -34,4 +35,8 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 3%;
+}
+
+a {
+  color: whitesmoke;
 }

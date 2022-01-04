@@ -12,8 +12,9 @@
 {% for mask in file.mask_inventory.all %}
 <section class='card-container'>
     <div class="card shadow p-3 mb-5" style="width: 18rem;">
-      <a href="{% url 'masks_detail' mask.id %}">
+      <a style='text-decoration: none;' href="{% url 'masks_detail' mask.id %}">
         <img src="{{ mask.photo.url }}" alt="">
+        <h2>{{ mask.name }}</h2>
         </a>
         <form action="{% url 'remove_mask' file.id mask.id %}" method="post">
             {% csrf_token %}
@@ -28,8 +29,9 @@
   {% for mask in masks %}
   <section class='card-container'>
     <div class="card shadow p-3 mb-5" style="width: 18rem;">
-        <a href="{% url 'masks_detail' mask.id %}">
+        <a style='text-decoration: none;' href="{% url 'masks_detail' mask.id %}">
         <img src="{{ mask.photo.url }}" alt="">
+        <h2 class="card-title">{{ mask.name }}</h2>
         </a>
         <form action="{% url 'assoc_mask' file.id mask.id %}" method="post">
             {% csrf_token %}
