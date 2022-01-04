@@ -41,6 +41,17 @@ section {
 h1 {
   display: flex;
   justify-content: center;
+  font-size: 350%;
+  font-weight: lighter;
+}
+
+.btn-dark {
+  height: 125%;
+  border-color: whitesmoke
+}
+
+.btn {
+  border-color: whitesmoke;
 }
 
 
