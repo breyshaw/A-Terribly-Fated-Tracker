@@ -8,6 +8,7 @@
     />
 {% endblock %}
 {% block content %}
+{% if file.mask_inventory.count %}
 <h1>{{file.name}}'s Mask Inventory</h1>
 {% for mask in file.mask_inventory.all %}
 <section class='card-container'>
@@ -23,7 +24,10 @@
       </div>
     {% endfor %}
   </section>
-  
+  {% else %}
+<h1>You have no masks in inventory. Add them below as you progress through the game!</h1>
+{% endif %}
+
   {% if masks.count %}
   <h1>Masks Left</h1>
   {% for mask in masks %}
