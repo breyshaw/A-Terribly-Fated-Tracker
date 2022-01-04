@@ -1,6 +1,13 @@
+@font-face {
+  font-family: HyliaSerifBeta-Regular;
+  src: url('../font/HyliaSerifBeta-Regular.otf')
+  format('opentype')
+}
+
 .card {
   background-color: black;
-  color: whitesmoke;
+  /* color: whitesmoke;
+  font-family: HyliaSerifBeta-Regular; */
   width: 80%;
   border-color: whitesmoke;
   border-radius: 10px;
@@ -22,5 +29,19 @@ body {
   background-image: url('../images/smoothwood.png');
   background-position: center;
   color: whitesmoke;
+  font-family: HyliaSerifBeta-Regular;
+  text-decoration: none;
 }
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+
 

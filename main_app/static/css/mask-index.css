@@ -1,3 +1,9 @@
+@font-face {
+  font-family: HyliaSerifBeta-Regular;
+  src: url('../font/HyliaSerifBeta-Regular.otf')
+  format('opentype')
+}
+
 .card {
   background-color: grey;
   width: 275px;
@@ -20,4 +26,12 @@ body {
   background-image: url('../images/hdbrick.png');
   background-position: center;
   color: whitesmoke;
+  font-family: HyliaSerifBeta-Regular;
+  text-decoration: none;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
 }

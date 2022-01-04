@@ -6,10 +6,7 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Save Files</h1>
-  <h1>
-    <a href="{% url 'files_create' %}">Create a new save file</a>
-  </h1>
+<h1>Save Files</h1>
   <section class='card-container'>
     {% for file in files %}
     <div class="card shadow p-3 mb-5">
@@ -37,6 +34,13 @@
         {% endif %}
     </div>
     {% endfor %}
+  </section>
+  <section>
+    <a style='text-decoration: none; color: whitesmoke;' href="{% url 'files_create' %}">
+    <button class='btn btn-dark'>
+      Create a new save file
+    </button>
+  </a>
   </section>
 
 {% endblock %}
