@@ -7,7 +7,7 @@
 <h1>All Masks</h1>
 <section class='card-container'>
     {% for mask in masks %}
-    <div class="card shadow p-3 mb-5" style="width: 18rem;">
+    <div class="card shadow p-3 mb-5" style="width: 12rem;">
         <a style='text-decoration: none; color: whitesmoke;' href="{% url 'masks_detail' mask.id %}">
             <div class="card-img-container">
                 {% if mask.photo.url %}

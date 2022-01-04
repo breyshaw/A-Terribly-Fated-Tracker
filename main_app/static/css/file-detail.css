@@ -35,8 +35,13 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 3%;
+  font-weight: lighter;
 }
 
 a {
   color: whitesmoke;
+}
+
+.card-img-top {
+  width: 60%;
 }
