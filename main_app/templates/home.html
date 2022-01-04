@@ -10,8 +10,8 @@
     </div>
     <h1 class='display-4'>A Terribly Fated Tracker</h1>
     {% if not user.is_authenticated %}
-    <div class="card text-white bg-dark border-danger mb-3" style="width: 20rem;">
-        <form action="{% url 'home' %}" method="post" class="card-body text-danger">
+    <div class="card bg-dark border-danger mb-3" style="width: 20rem;">
+        <form action="{% url 'home' %}" method="post" class="card-body">
             <h3 class='card-title'>Login to track:</h3>
             <div class='card-text'>
                 {% csrf_token %}

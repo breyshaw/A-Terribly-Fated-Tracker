@@ -21,19 +21,27 @@ section {
 body {
   background-color: black;
   font-family: HyliaSerifBeta-Regular;
-  color: red;
+  color: whitesmoke;
+  font-weight: lighter;
 }
 
 input {
   background-color: black;
   border-color: red;
-  color: white
+  color: white;
+  font-weight: lighter;
 }
 
-.btn {
+/* .btn {
   color: black;
-}
+} */
 
 h1 {
-  color: red;
+  color: whitesmoke;
+  font-weight: lighter;
+}
+
+.card {
+  color: whitesmoke;
+  font-weight: lighter;
 }
