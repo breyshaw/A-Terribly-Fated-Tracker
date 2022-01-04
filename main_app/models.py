@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 
 class Mask(models.Model):
   name = models.CharField(max_length=100)
-  details = models.TextField(max_length=250)
-  guide = models.CharField(max_length=500)
+  details = models.TextField(max_length=500)
+  guide = models.TextField(max_length=500)
   img_url = models.CharField(max_length=100, blank=True)
 
   def __str__(self):
