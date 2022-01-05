@@ -31,24 +31,33 @@
             method="POST"
             >
             {% csrf_token %}
-            <label class="btn secondary">
+            <label class="btn btn-secondary">
             Choose photo
             <input type="file" name="photo-file" id="file-input">
             </label>
-            <button type="submit" class="btn submit">Upload Photo</button>
+            <button type="submit" class="btn btn-danger">Upload Photo</button>
         </form>
     </div>
-    <div class="mask-details">
-        <h1>{{ mask.name }}</h1>
-        <h2>{{ mask.details }}</h2>
-        <p>{{ mask.guide }}</p>
+    <div class="card shadow p-3 mb-5">
+        <div class='mask-details'>
+            <h1>{{ mask.name }}</h1>
+            <h2>Description:</h2>
+            <p>{{ mask.details }}</p>
+            <h2>How to get:</h2>
+            <p>{{ mask.guide }}</p>
+        </div>
     </div>
     {% else %}
-    <div class="mask-details">
+</div>
+<div class="card shadow p-3 mb-5">
+    <div class='mask-details'>
         <h1>{{ mask.name }}</h1>
-        <h2>{{ mask.details }}</h2>
+        <h2>Description:</h2>
+        <p>{{ mask.details }}</p>
+        <h2>How to get:</h2>
         <p>{{ mask.guide }}</p>
     </div>
+</div>
     {% endif %}
 </section>
 {% endblock %}

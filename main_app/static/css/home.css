@@ -25,7 +25,8 @@ body {
   font-weight: lighter;
 }
 
-input {
+input{
+  font-family: sans-serif;
   background-color: black;
   border-color: red;
   color: white;

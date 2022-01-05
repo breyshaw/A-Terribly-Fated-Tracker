@@ -1,39 +1,18 @@
-.form-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+body {
+  /* background-image: url('../images/tiles.png'); */
+  background-position: center;
+  font-family: hylia;
+  color: whitesmoke;
+  font-family: HyliaSerifBeta-Regular;
+  font-weight: lighter;
 }
 
-table {
-  padding: 0 40px;
-  width: 100%;
-  border-spacing: 0 20px;
-}
-
-th {
-  text-align: left;
-  padding: 6px 20px 0 0;
-  font-weight: normal;
-  vertical-align: top;
-  font-size: 1.6rem;
-}
-
-td {
-  max-width: 60%;
-}
-
-td > * {
-  width: 100%;
-  padding: 2px 4px;
-  font-size: 1.8rem;
-}
-
-td > textarea {
-  height: calc(4 * 1.8rem + 8px);
-  font-family: inherit;
-}
-
-.btn {
-  align-self: flex-end;
-  margin-right: 40px;
+.card {
+  background-color: black;
+  /* color: whitesmoke;
+  font-family: HyliaSerifBeta-Regular; */
+  width: 80%;
+  border-color: whitesmoke;
+  border-radius: 10px;
+  border-width: 5px;
 }

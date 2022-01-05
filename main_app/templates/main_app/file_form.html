@@ -7,20 +7,24 @@
 <div class="page-header">
     <h1>Create a new Save File</h1>
 </div>
-<form action="" method="post" class="form-container">
-    {% comment %} 
-    Django requires the following for security purposes
-    {% endcomment %}
-    {% csrf_token %}
-    <table>
-        {% comment %}
-        Render the inputs inside of 
-        <tr>
-            s & 
-            <td>s
-                {% endcomment %}
-                {{ form.as_table }}
-    </table>
-    <button type="submit" class="btn submit">Submit!</button>
-</form>
+<section class="card-container">
+    <form action="" method="post" class="card shadow p-3 mb-5">
+        {% comment %} 
+        Django requires the following for security purposes
+        {% endcomment %}
+        {% csrf_token %}
+        <table>
+            {% comment %}
+            Render the inputs inside of 
+            <tr>
+                s & 
+                <td>s
+                    {% endcomment %}
+                    {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-secondary">Submit!</button>
+    </form>
+
+
+</section>
 {% endblock %}
