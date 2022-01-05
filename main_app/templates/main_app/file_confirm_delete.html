@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+{% endblock %}
 {% block content %}
 <div class="page-header">
     <h1>Delete this File?</h1>
 </div>
-<h2>Are you sure you want to delete file: {{ object.name }}?</h2>
-<form action="" method="POST" class="form">
-    {% csrf_token %}
-    <a 
-        href="{% url 'files_index' %}">
-        <div class="btn btn-danger">Cancel</div>
-    </a>
-    <button type="submit">Yes - Delete!</button>
-</form>
+<div class="card shadow p-3 mb-5">
+    <h2>Are you sure you want to delete file: {{ object.name }}?</h2>
+    <form action="" method="POST" class="form">
+        {% csrf_token %}
+        <a 
+            href="{% url 'files_index' %}">
+            <div class="btn btn-danger">Cancel</div>
+        </a>
+        <button class="btn btn-warning">Yes - Delete!</button>
+    </form>
+
+
+</div>
 {% endblock %}
