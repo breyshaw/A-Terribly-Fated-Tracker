@@ -10,8 +10,8 @@
 {% block content %}
 {% if file.mask_inventory.count %}
 <h1>{{file.name}}'s Mask Inventory</h1>
-{% for mask in file.mask_inventory.all %}
 <section class='card-container'>
+{% for mask in file.mask_inventory.all %}
     <div class="card shadow p-3 mb-5" style="width: 12rem;">
       <a style='text-decoration: none;' href="{% url 'masks_detail' mask.id %}">
         <img class="card-img-top" src="{{ mask.photo.url }}" alt="">
@@ -22,8 +22,8 @@
             <button type="submit" class="btn submit">Remove Mask from inventory</button>
         </form>
       </div>
-</section>
-    {% endfor %}
+      {% endfor %}
+    </section>
   {% else %}
 <h1>You have no masks in inventory. Add them below as you progress through the game!</h1>
 {% endif %}
