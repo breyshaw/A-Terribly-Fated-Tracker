@@ -17,6 +17,7 @@ Here are a few screenshots of the app, post styling and functionality:
 <img src="https://i.imgur.com/QLl3Ddt.png" height="300"> 
 <p></p>
 <img src="https://i.imgur.com/RkuUtmO.png" height="300"> 
+<img src="https://i.imgur.com/JrKfgpP.png" height="300"> 
 
 A Terribly Fated Tracker is a Full Stack Django and Python built application. Users are able to signup to create an account with Django's built in auth, they can perform full crud on their "Save Files" which are the game inventory trackers themselves. AWS image uploading functionality was implemented and is only allowed for the user that is admin.. me! I used it securely upload Henriko's awesome Mask Textures.
 
