@@ -9,8 +9,12 @@
         <img src="{% static 'images/title.png' %}" class="card-img-top" alt="Majoras Mask Image">
     </div>
     <h1 class='display-4'>A Terribly Fated Tracker</h1>
+    <a href="/masks">
+        <button class="btn btn-danger">Click here to view all Masks</button>
+    </a>
     {% if not user.is_authenticated %}
-    <div class="card bg-dark border-danger mb-3" style="width: 20rem;">
+    <h1 class='mt-1 mb-0'>-OR-</h1>
+    <div class="card bg-dark border-danger mb-3 mt-2" style="width: 20rem;">
         <form action="{% url 'home' %}" method="post" class="card-body">
             <h3 class='card-title'>Login to track:</h3>
             <div class='card-text'>
