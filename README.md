@@ -57,7 +57,7 @@ Potential to evolve this app into A Terribly Fated Guide. Story and dungeon walk
 All the credit goes to Henriko Magnifico for creating such an amazing retexture of Majora's Mask. I used his Majora's Mask 4K texture pack in this application with permission from Henriko himself. If reliving your childhood dreams in really good HD graphics sounds fun to you, check out this site:
 https://www.henrikomagnifico.com/
 
-DISCLAIMER: Henriko does NOT in any way distribute ROMS. Do NOT contact him (or me) to obtain ROM files. Henriko is simply a passionate artist that has brought joy to thousands for doing something that Nintendo will not do.. and that is remastering OOT and MM. 
+DISCLAIMER: Henriko does NOT in any way distribute ROMS. Do NOT contact him (or me) to obtain ROM files. 
 
 ### Font
 
